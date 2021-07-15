@@ -7,14 +7,14 @@ This is an example how to set up a repository that builds code that can be consu
 
 All the magic is in the `esmbuild` folder. Contributions are welcome.
 
-## Features
+### Features
 
 - Built on `esbuild` for speed and to support JavaScript, TypeScript and JSX.
 - Custom plugin to handle ESM imports and rewrite local import paths.
 - CSS Modules plugin to support writing css scoped modules.
 - GitHub Workflow to deploy versioned code on GitHub pages.
 
-## Development
+## Quickstart
 
 Start the development server with:
 

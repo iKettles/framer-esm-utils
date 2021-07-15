@@ -81,4 +81,6 @@ You can use the default esbuild [css importer](https://esbuild.github.io/content
 
 ## Gotchas
 
-- **Private code**: you should keep your source private, but not your built code. Make sure to enable `minify` in the `esmbuild.js` script to minify your code.
+**Private code**: you should keep your source private, but not your built code. Make sure to enable `minify` in the `esmbuild.js` script to minify your code.
+
+**Import maps**: once you start doing more advanced imports, you'll likely want to rely on an [import map](https://github.com/WICG/import-maps) set up, which is fully suported in Framer.

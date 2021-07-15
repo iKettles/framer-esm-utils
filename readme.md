@@ -26,7 +26,7 @@ Open Framer, create a code file and paste the following:
 
 ```.tsx
 import { addPropertyControls, ControlType } from "framer"
-import { Button as ImportedButton } from "http://127.0.0.1:8001/index.js"
+import { Button as ImportedButton } from "http://127.0.0.1:8000/index.js"
 
 export const Button: React.ComponentType = ImportedButton
 
@@ -50,7 +50,7 @@ You can now add your component to the canvas and configure it using the defined 
 The imported esm gets cached quite agressively, if you want to make sure you see the latest version you can add a random value to the imported url line:
 
 ```.tsx
-import { Button as ImportedButton } from "http://127.0.0.1:8001/index.js?123"
+import { Button } from "http://127.0.0.1:8001/index.js?123"
 ```
 
 If you forget to start your local server, your component will render with:

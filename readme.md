@@ -5,6 +5,8 @@ This is an example how to set up a repository that builds code that can be consu
 - `yarn run serve` This runs a local web server with the built code.
 - `yarn run build` This builds the code in `dist`.
 
+All the magic is in the `esmbuild` folder. Contributions are welcome.
+
 ## Features
 
 - Built on `esbuild` for speed and to support JavaScript, TypeScript and JSX.
@@ -49,6 +51,12 @@ The imported esm gets cached quite agressively, if you want to make sure you see
 
 ```.tsx
 import { Button as ImportedButton } from "http://127.0.0.1:8001/index.js?123"
+```
+
+If you forget to start your local server, your component will render with:
+
+```
+Error in <name>.tsx Failed to Fetch
 ```
 
 ## Deployment

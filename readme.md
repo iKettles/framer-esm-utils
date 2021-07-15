@@ -39,7 +39,7 @@ addPropertyControls(Button, {
 
 (Todo: we will make this work soon too)
 
-```
+```.tsx
 export default Button as React.ComponentType
 ```
 
@@ -47,7 +47,7 @@ You can now add your component to the canvas and configure it using the defined 
 
 The imported esm gets cached quite agressively, if you want to make sure you see the latest version you can add a random value to the imported url line:
 
-```
+```.tsx
 import { Button as ImportedButton } from "http://127.0.0.1:8001/index.js?123"
 ```
 

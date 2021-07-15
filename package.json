@@ -1,6 +1,6 @@
 {
   "name": "esmbuild",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "",
   "license": "MIT",
   "author": {
@@ -8,7 +8,8 @@
   },
   "scripts": {
     "serve": "node esmbuild/esmbuild serve ./src 8000",
-    "build": "node esmbuild/esmbuild build ./src dist"
+    "build": "node esmbuild/esmbuild build ./src dist",
+    "postversion": "git push --tags"
   },
   "dependencies": {
     "@types/react": "^17.0.14",

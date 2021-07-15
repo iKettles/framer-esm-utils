@@ -61,7 +61,19 @@ Error in <name>.tsx Failed to Fetch
 
 ## Deployment
 
-[Todo: Workflow, Versioning]
+Once you are ready to deploy your code, it should be uploaded to an https endpoint with a versioned url. We have set up a [Workflow](https://github.com/framer/example-framer-esm-setup/actions) to build the code and deploy to [GitHub Pages](https://github.com/framer/example-framer-esm-setup/tree/pages). To ship a next version you simply type:
+
+```
+yarn run deploy
+```
+
+You'll have to type a new version (let's say `1.0.4`), and soon the code will be deployed to: (`https://framer.github.io/example-framer-esm-setup/esmbuild@1.0.4/index.js`)[https://framer.github.io/example-framer-esm-setup/esmbuild@1.0.4/index.js]. You can now update your imports to the production url and you'll get the exact same result:
+
+```.tsx
+import { Button } from "https://framer.github.io/example-framer-esm-setup/esmbuild@1.0.4/index.js"
+```
+
+It's very important to version your code, so endpoints stay stable. To move to a new version, you simply update the import urls wherever you need.
 
 ## CSS
 

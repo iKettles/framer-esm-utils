@@ -6,9 +6,9 @@ name: Deploy
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -38,7 +38,8 @@ jobs:
           cd main
           yarn
           yarn run build
-          cp -rf releases/* $GITHUB_WORKSPACE/pages/
+          yarn run release
+          cp -rf release/* $GITHUB_WORKSPACE/pages/
       - name: Commit & Push
         run: |
           cd pages

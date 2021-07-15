@@ -1,4 +1,4 @@
-## Framer ESM Example Setup
+# Framer ESM Example Setup
 
 This is an example how to set up a repository that builds code that can be consumed in Framer. It builds standard JavaScript into ES Modules that you can both use locally for development or to deploy to any http server for distribution.
 

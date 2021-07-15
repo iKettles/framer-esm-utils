@@ -53,10 +53,12 @@ import { Button as ImportedButton } from "http://127.0.0.1:8001/index.js?123"
 
 ## Deployment
 
+[Todo: Workflow, Versioning]
+
 ## CSS
 
 You can use the default esbuild [css importer](https://esbuild.github.io/content-types/#css), or you can use a [plugin to use css modules](https://github.com/indooorsman/esbuild-css-modules-plugin), that optionally auto inserts the css as a `<style>` tag (as configured).
 
 ## Gotchas
 
-- **Private code**
+- **Private code**: you should keep your source private, but not your built code. Make sure to enable `minify` in the `esmbuild.js` script to minify your code.

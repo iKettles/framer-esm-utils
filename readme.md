@@ -14,7 +14,7 @@ All the magic is in the `esmbuild` folder. Contributions are welcome.
 - CSS Modules plugin to support writing css scoped modules.
 - GitHub Workflow to deploy versioned code on GitHub pages.
 
-## Quickstart
+## 🏎 Quickstart
 
 Start the development server with:
 

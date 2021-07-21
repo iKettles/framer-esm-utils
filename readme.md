@@ -19,6 +19,7 @@ All the magic is in the `esmbuild` folder. Contributions are welcome.
 Start the development server with:
 
 ```
+yarn
 yarn run serve
 ```
 
@@ -26,9 +27,9 @@ Open Framer, create a code file and paste the following:
 
 ```.tsx
 import { addPropertyControls, ControlType } from "framer"
-import { Button as ImportedButton } from "http://127.0.0.1:8000/index.js"
+import { Button } from "http://127.0.0.1:8000/index.js"
 
-export const Button: React.ComponentType = ImportedButton
+export default Button as React.ComponentType
 
 addPropertyControls(Button, {
     title: {
@@ -37,12 +38,6 @@ addPropertyControls(Button, {
         defaultValue: "Title",
     },
 })
-```
-
-(Todo: we will make this work soon too)
-
-```.tsx
-export default Button as React.ComponentType
 ```
 
 You can now add your component to the canvas and configure it using the defined `propertyControls`. This setup assumes you want to define them only on the Framer side (keeping your code clean) but you can also keep them in the original source.

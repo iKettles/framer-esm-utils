@@ -19,7 +19,6 @@ All the magic is in the `esmbuild` folder. Contributions are welcome.
 Start the development server with:
 
 ```
-yarn
 yarn run serve
 ```
 

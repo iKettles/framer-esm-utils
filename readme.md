@@ -77,6 +77,8 @@ You can use the default esbuild [css importer](https://esbuild.github.io/content
 
 **Private code**: you should keep your source private, but not your built code. Make sure to enable `minify` in the `esmbuild.js` script to minify your code.
 
+**Assets**: you can host your assets (images, movies) anywhere you like and just use the full urls to use them in your components.
+
 **Import maps**: once you start doing more advanced imports, you'll likely want to rely on an [import map](https://github.com/WICG/import-maps) set up, which is fully suported in Framer.
 
 **Auto refresh**: you currently have to manually reload your components to see changes in your development code. It should be doable to make an `esbuild` plugin that inserts a snippet to auto reload after changes. Contributions are welcome.

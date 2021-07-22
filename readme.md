@@ -1,6 +1,6 @@
 # Framer ESM Example Setup
 
-This is an example how to set up a repository that builds code that can be consumed in Framer. It builds standard JavaScript into ES Modules that you can both use locally for development or to deploy to any http server for distribution.
+This is an example how to set up a repository that builds code which can be consumed in Framer. It builds standard JavaScript into ES Modules that you can both use locally for development or to deploy to any http server for distribution across your team or the internet.
 
 - `yarn run serve` This runs a local web server with the built code.
 - `yarn run build` This builds the code in `dist`.

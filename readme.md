@@ -81,11 +81,12 @@ The `plugin.esm.js` makes sure that your local file imports are translated to es
 
 ```.tsx
 import React from "react"
+import ReactDOM from "react-dom"
 import Framer from "framer"
 import motion from "framer-motion"
 ```
 
-Externals work like externals, so they can be picked up by an [import map](https://github.com/WICG/import-maps). In Framer we defined `react`, `framer`, and `framer-motion` in the current import map, so we marked them as externals in the setup here.
+Externals work like externals, so they can be picked up by an [import map](https://github.com/WICG/import-maps). In Framer we defined specific ones in the current import map, so we marked them as externals in the setup here.
 
 #### Node Modules
 

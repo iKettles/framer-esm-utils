@@ -73,12 +73,52 @@ It's very important to version your code, so endpoints stay stable. To move to a
 
 You can use the default esbuild [css importer](https://esbuild.github.io/content-types/#css), or you can use a [plugin to use css modules](https://github.com/indooorsman/esbuild-css-modules-plugin), that optionally auto inserts the css as a `<style>` tag (as configured).
 
+## Imports
+
+The `plugin.esm.js` makes sure that your local file imports are translated to esm imports. In the example configurations it works as follows:
+
+### Externals
+
+```.tsx
+import React from "react"
+import Framer from "framer"
+import motion from "framer-motion"
+```
+
+Externals work like externals, so they can be picked up by an [import map](https://github.com/WICG/import-maps). In Framer we defined `react`, `framer`, and `framer-motion` in the current import map, so we marked them as externals in the setup here.
+
+### Node Modules
+
+```.tsx
+import * as _ from "lodash"
+```
+
+`node_modules` work like you would expect. You can just install them with `yarn` and they'll be inlined in the module that imports them.
+
+### URLs
+
+```.tsx
+import * as _ from "https://ga.jspm.io/npm:lodash@4.17.21/index.js"
+```
+
+Url imports will just be kept intact so you can do non local esm imports.
+
+### ESM
+
+```.tsx
+import { Button } from "./Button"
+```
+
+Local esm imports will be rewritten to include the file extension:
+
+```.tsx
+import { Button } from "./Button.js"
+```
+
 ## Gotchas
 
 **Private code**: you should keep your source private, but not your built code. Make sure to enable `minify` in the `esmbuild.js` script to minify your code.
 
 **Assets**: you can host your assets (images, movies) anywhere you like and just use the full urls to use them in your components.
-
-**Import maps**: once you start doing more advanced imports, you'll likely want to rely on an [import map](https://github.com/WICG/import-maps) set up, which is fully suported in Framer.
 
 **Auto refresh**: you currently have to manually reload your components to see changes in your development code. It should be doable to make an `esbuild` plugin that inserts a snippet to auto reload after changes. Contributions are welcome.

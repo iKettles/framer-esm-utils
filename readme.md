@@ -77,7 +77,7 @@ You can use the default esbuild [css importer](https://esbuild.github.io/content
 
 The `plugin.esm.js` makes sure that your local file imports are translated to esm imports. In the example configurations it works as follows:
 
-### Externals
+#### Externals (for import maps)
 
 ```.tsx
 import React from "react"
@@ -87,7 +87,7 @@ import motion from "framer-motion"
 
 Externals work like externals, so they can be picked up by an [import map](https://github.com/WICG/import-maps). In Framer we defined `react`, `framer`, and `framer-motion` in the current import map, so we marked them as externals in the setup here.
 
-### Node Modules
+#### Node Modules
 
 ```.tsx
 import * as _ from "lodash"
@@ -95,7 +95,7 @@ import * as _ from "lodash"
 
 `node_modules` work like you would expect. You can just install them with `yarn` and they'll be inlined in the module that imports them.
 
-### URLs
+#### URLs
 
 ```.tsx
 import * as _ from "https://ga.jspm.io/npm:lodash@4.17.21/index.js"
@@ -103,7 +103,7 @@ import * as _ from "https://ga.jspm.io/npm:lodash@4.17.21/index.js"
 
 Url imports will just be kept intact so you can do non local esm imports.
 
-### ESM
+#### ESM
 
 ```.tsx
 import { Button } from "./Button"

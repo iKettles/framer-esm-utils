@@ -17,6 +17,7 @@ async function getBuildOptions(path) {
         // minify: true,
         format: 'esm',
         bundle: true,
+        external: ["react", "framer", "framer-motion"],
         plugins: [esmPlugin, cssPlugin({ inject: true })],
     }
 }
